@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>김은지 | ESG 포트폴리오</title>
+<style>
+:root{
+  --bg:#F6F8F7; --ink:#1D2B29; --muted:#5C6A67; --line:#D3DCD9;
+  --accent:#1F6B84; --soft:#E3EEF1; --paper:#FFFFFF;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:24px}
+body{
+  margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard","Apple SD Gothic Neo","Noto Sans KR","Malgun Gothic",sans-serif;
+  line-height:1.7;font-size:16px;word-break:keep-all;
+}
+a{color:var(--accent)}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.wrap{max-width:1080px;margin:0 auto;padding:56px 28px 96px;display:grid;grid-template-columns:210px 1fr;gap:64px}
+
+/* side */
+aside{position:sticky;top:56px;align-self:start}
+aside h1{font-size:34px;line-height:1.2;margin:0 0 6px;font-weight:800;letter-spacing:-.02em}
+aside .role{margin:0 0 28px;color:var(--muted);font-size:14px}
+nav ul{list-style:none;margin:0 0 28px;padding:0;border-left:2px solid var(--line)}
+nav a{display:block;padding:6px 0 6px 14px;margin-left:-2px;border-left:2px solid transparent;color:var(--muted);text-decoration:none;font-size:14px}
+nav a:hover{color:var(--accent);border-left-color:var(--accent)}
+.contact{font-size:13px;color:var(--muted);line-height:1.9}
+.contact b{color:var(--ink);font-weight:600}
+
+/* main */
+.lead{font-size:20px;line-height:1.65;margin:0 0 20px;font-weight:600;letter-spacing:-.01em}
+.sub{color:var(--muted);margin:0 0 40px}
+.strengths{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin:0 0 72px;border:1px solid var(--line);border-radius:6px;background:var(--paper)}
+.strengths div{padding:18px 20px;border-right:1px solid var(--line)}
+.strengths div:last-child{border-right:0}
+.strengths h2{font-size:15px;margin:0 0 6px;color:var(--accent)}
+.strengths p{margin:0;font-size:14px;color:var(--muted);line-height:1.6}
+
+section{margin-bottom:72px}
+section>h2{font-size:24px;margin:0 0 6px;letter-spacing:-.01em}
+section>.desc{margin:0 0 28px;color:var(--muted);font-size:15px}
+
+.proj{display:grid;grid-template-columns:170px 1fr;gap:28px;padding:26px 0;border-top:1px solid var(--line)}
+.facts{border-left:3px solid var(--accent);padding-left:14px;font-size:13px;line-height:1.55}
+.facts dl{margin:0}
+.facts dt{color:var(--muted);margin-top:10px}
+.facts dt:first-child{margin-top:0}
+.facts dd{margin:0;font-weight:600;font-variant-numeric:tabular-nums}
+.body h3{font-size:18px;margin:0 0 8px;line-height:1.4}
+.body p{margin:0 0 10px;font-size:15px}
+.body p:last-child{margin-bottom:0}
+.body ul{margin:0 0 10px;padding-left:18px;font-size:15px}
+.body li{margin-bottom:4px}
+.tag{display:inline-block;font-size:12px;padding:1px 8px;border-radius:4px;background:var(--soft);color:var(--accent);margin:0 4px 6px 0;font-weight:600}
+.note{font-size:13px;color:var(--muted)}
+
+table{width:100%;border-collapse:collapse;font-size:14px;background:var(--paper);border:1px solid var(--line);border-radius:6px;overflow:hidden}
+th,td{padding:12px 14px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+th{background:var(--soft);font-weight:700;font-size:13px}
+tr:last-child td{border-bottom:0}
+td.num{font-variant-numeric:tabular-nums;font-weight:600;white-space:nowrap}
+.tablewrap{overflow-x:auto;margin:6px 0 10px}
+
+.creds{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.creds div{padding:14px 16px;background:var(--paper);border:1px solid var(--line);border-radius:6px;font-size:14px}
+.creds b{display:block;font-size:15px;margin-bottom:2px}
+
+footer{border-top:1px solid var(--line);padding-top:20px;color:var(--muted);font-size:13px}
+
+@media (max-width:860px){
+  .wrap{grid-template-columns:1fr;gap:32px;padding:32px 20px 72px}
+  aside{position:static}
+  nav ul{display:flex;flex-wrap:wrap;gap:4px 16px;border-left:0}
+  nav a{padding:2px 0;margin:0;border-left:0}
+  .strengths{grid-template-columns:1fr}
+  .strengths div{border-right:0;border-bottom:1px solid var(--line)}
+  .strengths div:last-child{border-bottom:0}
+  .proj{grid-template-columns:1fr;gap:14px}
+  .creds{grid-template-columns:1fr}
+}
+@media print{
+  body{background:#fff}
+  aside{position:static}
+  .wrap{grid-template-columns:150px 1fr;gap:28px;padding:0}
+  .proj{break-inside:avoid}
+  nav{display:none}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<aside>
+  <h1>김은지</h1>
+  <p class="role">환경공학, ESG, 탄소 데이터</p>
+  <nav aria-label="목차">
+    <ul>
+      <li><a href="#esg">ESG 규제 리서치</a></li>
+      <li><a href="#eng">환경 공정 및 효율 분석</a></li>
+      <li><a href="#ai">데이터 병합 및 시각화</a></li>
+      <li><a href="#field">현장 기획 및 실무 운영</a></li>
+      <li><a href="#cred">자격과 어학</a></li>
+    </ul>
+  </nav>
+  <div class="contact">
+    <b>이메일</b><br>[nicole1214@naver.com]<br>
+    <b>연락처</b><br>[010-7576-5873]<br>
+    
+  </div>
+</aside>
+
+<main>
+  <p class="lead">현장의 환경 데이터를 직접 다뤄 온 환경공학 전공자입니다. 데이터 정제와 규제 리서치 기본기를 바탕으로 기업의 온실가스 산정과 ESG 공시 실무를 꼼꼼히 백업하겠습니다.</p>
+  <p class="sub">충남대학교 환경공학 2027.02 졸업예정</p>
+
+  <div class="strengths">
+    <div>
+      <h2>규제 리서치 기본기</h2>
+      <p>배출권거래제, CBAM 등 주요 공시 기준의 원문을 살피며, 제도가 기업 실무에 미치는 영향을 파악하는 시야를 길렀습니다.</p>
+    </div>
+    <div>
+      <h2>정량적 데이터 핸들링</h2>
+      <p>Python과 R을 활용해 수질·토양 데이터를 가공하고, 구조가 다른 로우 데이터(Raw Data)를 정제 및 병합할 수 있습니다.</p>
+    </div>
+    <div>
+      <h2>꼼꼼한 교차 검증</h2>
+      <p>데이터 병합 시 수치가 어긋나면 원인을 단정하지 않고, 교차 검증을 통해 정합성을 우선 확보하는 실무적 태도를 갖췄습니다.</p>
+    </div>
+  </div>
+
+  <!-- ESG -->
+  <section id="esg">
+    <h2>ESG 규제 리서치 및 인사이트</h2>
+    <p class="desc">국내외 환경 정책을 비교 분석하고, 기업의 실무적 대응 방향성을 탐구한 활동입니다.</p>
+
+    <article class="proj">
+      <div class="facts"><dl>
+        <dt>기간</dt><dd>2023.11 ~ 2026.08</dd>
+        <dt>주관</dt><dd>한국환경산업기술원 등</dd>
+      </dl></div>
+      <div class="body">
+        <h3>ESG 실무 및 탄소중립 청년인재 교육</h3>
+        <ul>
+          <li>목표관리제, 배출권거래제, CBAM, 내부탄소가격제의 가이드라인과 산정 방식을 구조적으로 비교 분석.</li>
+          <li>GRI, SASB 등 공시 기준 원문 기반 재무/영향 중요성(이중중요성) 개념 정리.</li>
+        </ul>
+        <p class="note">배출량 산정 시 기업 현장에서 겪는 데이터 수집의 현실적 한계를 인지하고, 이론을 넘어 기업 사정에 맞는 정량적 지표 기획의 중요성을 확인했습니다.</p>
+      </div>
+    </article>
+
+    <article class="proj">
+      <div class="facts"><dl>
+        <dt>기간</dt><dd>UTT 교환학생 기간</dd>
+        <dt>역할</dt><dd>팀장</dd>
+      </dl></div>
+      <div class="body">
+        <h3>한국과 프랑스의 의류 폐기물(EPR) 정책 비교</h3>
+        <p>한국인 교환학생의 강점을 살려 당초 프랑스에 한정됐던 과제 범위를 한국 사례와의 비교 분석으로 주도적으로 확장했습니다.</p>
+        <p>생산자에게 처리 책임을 부과하는 프랑스(2007년 TLC 섹터 법제화)와 지자체 수거에 의존하는 한국의 구조적 차이를 대조했습니다. 단순 조사를 넘어, 생산자 책임 구조 유무에 따른 국내 패션 기업들의 잠재적 규제 리스크와 정책 도입 필요성을 도출해 교수님의 호평을 받았습니다.</p>
+      </div>
+    </article>
+
+    <article class="proj">
+      <div class="facts"><dl>
+        <dt>기간</dt><dd>2023.12</dd>
+        <dt>과목</dt><dd>산업폐기물관리</dd>
+      </dl></div>
+      <div class="body">
+        <h3>중국 전기차 배터리 시장 동향 및 정책 분석</h3>
+        <p>KOTRA 데이터를 기반으로 중국 폐배터리 회수 및 재활용 등록업체의 급증(19년 1,367개 → 20년 3,321개) 추이를 정량화했습니다. 아울러 '14.5 순환경제발전규획'과 '동력배터리 재활용 생산책임제' 등 관련 정책의 시사점을 정리했습니다.</p>
+        <p>결론부에서 순환경제 전환에 따른 국내 기업들의 신규 비즈니스 대응 방향성과 폐배터리 이력관리 플랫폼 구축의 필요성을 제안했습니다.</p>
+      </div>
+    </article>
+  </section>
+
+  <!-- 환경공학 -->
+  <section id="eng">
+    <h2>환경 공정 및 효율 분석</h2>
+    <p class="desc">현장 실측 데이터를 바탕으로 수질 오염도를 정량화하고, 공정 비용 효율성을 계산한 프로젝트입니다.</p>
+
+    <article class="proj">
+      <div class="facts"><dl>
+        <dt>기간</dt><dd>2025.03~2025.08</dd>
+        <dt>제올라이트 투입</dt><dd>침전지 필요면적<br>약 77% 감소</dd>
+        <dt>시공비 절감</dt><dd>약 3억 원</dd>
+      </dl></div>
+      <div class="body">
+        <h3>가중응집제 모델링을 통한 하수처리장 효율 최적화</h3>
+        <p>대전하수처리장 활성슬러지와 황토, 제올라이트, 활성탄 3종 가중응집제의 침전 효과를 실증 비교하고 운전 매뉴얼을 도출했습니다.</p>
+        <ul>
+          <li>성능 기준: 고형물 부하율(SLR) 이론을 적용해 필요 면적 감소에 따른 시공비 약 3억 원 절감 가능성 확인.</li>
+          <li>경제성 기준: 황토 0.4g 투입 시 침전 면적 41% 감소 효과를 입증하여 저비용 대안 제시.</li>
+          <li>집중호우(MLSS 3,500mg/L) 악천후를 가정한 시뮬레이션을 통해 상황별 운영비(일 630만 원) 최적화 매뉴얼 수립.</li>
+        </ul>
+        <p class="note">내 역할: 엑셀을 활용해 MLSS, 투입량, 침전속도, 비용 비교표 작성 및 실험 자재 정산 내역서 관리</p>
+      </div>
+    </article>
+
+    <article class="proj">
+      <div class="facts"><dl>
+        <dt>기간</dt><dd>2023.03~2023.08</dd>
+        <dt>수상</dt><dd>한국도시환경학회 2023 우수상</dd>
+      </dl></div>
+      <div class="body">
+        <h3>반석천 초기강우 비점오염원 정량 분석</h3>
+        <p>현장에서 하천수를 직접 채수하여 초기강우 시 SS와 T-P 농도 변화를 실측했습니다. 비점오염원의 유입 패턴을 정량적으로 데이터화하여 원인을 규명하고, 와류형 침전 장치(vortex settling device) 기반의 오염 저감 방안을 제안했습니다.</p>
+      </div>
+    </article>
+  </section>
+
+  <!-- AI -->
+  <section id="ai">
+    <h2>데이터 병합 및 시각화</h2>
+    <p class="desc">코딩과 AI 툴을 활용해 로우 데이터의 정합성을 검증하고 결과를 직관적으로 시각화한 프로젝트입니다.</p>
+
+    <article class="proj">
+      <div class="facts"><dl>
+        <dt>기간</dt><dd>2024.08~2025.01</dd>
+        <dt>도구</dt><dd>Python, Pandas, Excel</dd>
+      </dl></div>
+      <div class="body">
+        <h3>EEA 토양 중금속 데이터 병합 및 정합성 검증</h3>
+        <p>국가별로 배열된 EEA 원본 데이터와 중금속별로 배열된 연구실 데이터의 구조적 차이를 파악하고, Python Pandas를 활용해 자동 변환 코드를 구현했습니다.</p>
+        <p>병합 과정에서 Ni, Se 수치의 불일치 오류를 발견했습니다. 임의로 원인을 단정하지 않고 교차 검증 내용과 범위를 투명하게 문서화하여 공유함으로써, 데이터 정합성을 확보하고 최신 데이터로 수정 승인을 받았습니다.</p>
+      </div>
+    </article>
+
+    <article class="proj">
+      <div class="facts"><dl>
+        <dt>기간</dt><dd>2024</dd>
+        <dt>결과</dt><dd>2등</dd>
+      </dl></div>
+      <div class="body">
+        <h3>AI 하수관로 매핑 로봇(Jetbot) 디버깅 및 시각화</h3>
+        <p>Lidar 매핑 및 균열 촬영이 가능한 Jetbot 기반 주행 로봇을 조립했습니다. 테스트 중 주행 이탈 오류가 발생하자, 매핑 포인트의 인식 거리를 단축하고 오류 이미지 30장을 직접 정제하는 디버깅을 수행해 궤도 주행을 성공시켰습니다.</p>
+        <p>로봇이 관내를 매핑하는 가상의 모습을 미드저니(Midjourney) AI를 활용해 직관적으로 시각화하고 PPT에 녹여내어, 기술의 효용성을 성공적으로 설득했습니다.</p>
+      </div>
+    </article>
+
+    <div class="tablewrap">
+    <table>
+      <thead><tr><th>프로젝트</th><th>분석 기법 및 도구</th><th>분석 결과 및 지표</th></tr></thead>
+      <tbody>
+        <tr><td>대청댐 수위 예측</td><td>LSTM</td><td class="num">R² 0.988 (학습), 0.76 (검증)</td></tr>
+        <tr><td>갑천 수질 분석 (개인)</td><td>R, 상관분석 및 다중회귀</td><td class="num">TN–DTN r = 0.9866, R² = 0.9702</td></tr>
+        <tr><td>대전하수처리장 수질 분류</td><td>로지스틱 회귀 + KNN(k=5)</td><td>ROC Curve, AUC 산출 (유입수/방류수 BOD, SS, T-P 등 분류)</td></tr>
+        <tr><td>태양광 발전량 예측</td><td>선형회귀</td><td class="num">R² 0.9023, MAE 5.27</td></tr>
+      </tbody>
+    </table>
+    </div>
+  </section>
+
+  <!-- 현장 -->
+  <section id="field">
+    <h2>현장 기획 및 실무 운영</h2>
+    <p class="desc">팀의 빈틈을 파악해 역할을 자처하고 꼼꼼한 서류/비용 정산으로 프로젝트를 백업한 경험입니다.</p>
+
+    <article class="proj">
+      <div class="facts"><dl>
+        <dt>기간</dt><dd>2020.10~2020.12</dd>
+        <dt>대회</dt><dd>창의충전소 2020</dd>
+        <dt>결과</dt><dd>2등</dd>
+      </dl></div>
+      <div class="body">
+        <h3>인도네시아 새우양식장 수질 개선 실무 백업</h3>
+        <p>비전공자로서 회로 설계 대신 '환경 문제(산소 농도) 분석'과 '영문 커뮤니케이션' 역할을 주도적으로 발굴했습니다. 현지 기업의 페인포인트를 영어로 파악하고, 시제품 세일즈를 위한 영문 홍보 영상 기획과 발표문 작성을 전담했습니다.</p>
+        <p>팀의 원활한 운영을 위해 아두이노 보드, 모터 펌프 등 필수 자재 리스트업과 주문 서류 작성을 도맡고, 영수증 증빙 및 예산 정산을 꼼꼼히 처리해 2위 달성에 기여했습니다.</p>
+      </div>
+    </article>
+
+    <article class="proj">
+      <div class="facts"><dl>
+        <dt>기간</dt><dd>2023.11, 제주</dd>
+        <dt>역할</dt><dd>운영팀장 (기획/정산 총괄)</dd>
+        <dt>결과</dt><dd>부스 참여도 1위</dd>
+      </dl></div>
+      <div class="body">
+        <h3>아시아 태평양 영리더스 포럼 환경부스 기획</h3>
+        <p>타 대학 운영진과 Zoom 미팅을 통해 스톱워치 기록 경쟁, 순위기록판 등 직관적이고 참여 유도형 기획안을 수립했습니다. 행사 당일 예상치 못한 시설 문제가 발생하자 즉각적으로 운영/보수 인력을 재배치하여 위기를 넘겼고, 발생한 현장 제작 비용은 누락 없이 영수증으로 정산했습니다.</p>
+      </div>
+    </article>
+
+    <article class="proj">
+      <div class="facts"><dl>
+        <dt>기간</dt><dd>2024.07~2024.11</dd>
+        <dt>역할</dt><dd>팀장</dd>
+        <dt>성과</dt><dd>숏폼 조회수 1위</dd>
+      </dl></div>
+      <div class="body">
+        <h3>한국수자원공사 서포터즈 18기 일정 관리</h3>
+        <p>작업 지연 문제를 해결하기 위해 마감일 기준 역산형 스케줄링(검수-제작-주제 선정 순)을 도입해 콘텐츠 정시 발행률 100%를 달성했습니다. 매월 팀원들의 활동비 및 제작 비용 영수증을 취합해 투명하게 정산 서류를 작성했습니다.</p>
+      </div>
+    </article>
+  </section>
+
+  <!-- 자격 -->
+  <section id="cred">
+    <h2>자격과 어학</h2>
+    <p class="desc">&nbsp;</p>
+    <div class="creds">
+      <div><b>TOEIC Speaking AL</b>160점</div>
+      <div><b>TOEIC 840</b>840점</div>
+      <div><b>산업안전기사</b>취득</div>
+      <div><b>수질환경기사</b>필기 합격, 실기 준비 중</div>
+      <div><b>글로벌 커뮤니케이션</b>프랑스 UTT 영어/프랑스어 전공 수업 수료</div>
+    </div>
+  </section>
+
+  <footer>김은지 | 환경공학 ESG 탄소 포트폴리오</footer>
+</main>
+
+</div>
+</body>
+</html>
